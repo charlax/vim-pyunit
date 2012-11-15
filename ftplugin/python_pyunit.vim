@@ -378,12 +378,18 @@ class NoseLayout(BaseTestLayout):
         return result
 
 
+class DisabledLayout(BaseTestLayout):
+    def is_test_file(self, some_file):
+        return True
+
+
 def get_implementing_class():
     implementations = {
         'flat': FlatLayout,
         'follow-hierarchy': FollowHierarchyLayout,
         'side-by-side': SideBySideLayout,
         'nose': NoseLayout,
+        'disabled': DisabledLayout,
     }
     test_layout = vim.eval('g:PyUnitTestsStructure')
     try:

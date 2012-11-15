@@ -48,7 +48,6 @@ finds which test files belong to which source files.
 
 The ``PyUnitTestsStructure`` setting is the most important one, because it
 determines where the PyUnit plugin searches for source and test files.
-There are three options:
 
 * **flat**: Put all test files in a single test directory.  File names are
   composed by resembling the source's module structure, using underscores
@@ -70,6 +69,8 @@ There are three options:
   prefixed with ``test_``, only the last (file part) component is.
   For example, the test file for the source file ``foo/bar.py`` is called
   ``tests/foo/test_bar.py``.
+* **disabled**: Do not try to find the test or the source. Just run tests
+  against the current file.
 
 
 Keyboard mappings
